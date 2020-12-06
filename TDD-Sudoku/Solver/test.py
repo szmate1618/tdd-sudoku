@@ -11,19 +11,36 @@ class TestTypes(unittest.TestCase):
         solution = solver.solve(test_data.solved)
         self.assertEqual(len(solution), 9)
         self.assertIsInstance(solution, list)
-        for line in solution:
-            self.assertEqual(len(line), 9)
-            self.assertIsInstance(line, list)
-            for cell in line:
+        for row in solution:
+            self.assertEqual(len(row), 9)
+            self.assertIsInstance(row, list)
+            for cell in row:
                 self.assertIsInstance(cell, int)
 
 
 class TestUniqueness(unittest.TestCase):
 
-    def test_uniqueness_in_lines(self):
+    def test_uniqueness_in_rows(self):
         solution = solver.solve(test_data.solved)
-        for line in solution:
-            self.assertEqual(len(set(line)), len(line))
+        for row in solution:
+            self.assertEqual(len(set(row)), len(row))
+
+    def test_uniqueness_in_columns(self):
+        solution = solver.solve(test_data.solved)
+        for column_index in range(9):
+            column = [ solution[row_index][column_index] for row_index in range(9)]
+            self.assertEqual(len(set(column)), len(column))
+
+    def test_uniqueness_in_boxes(self):
+        solution = solver.solve(test_data.solved)
+        for box_index in range(9):
+            bi = (box_index // 3) * 3
+            bj = (box_index % 3) * 3
+            box = []
+            for i in range(3):
+                for j in range(3):
+                    box.append(solution[bi + i][bj + j])
+            self.assertEqual(len(set(box)), len(box))
 
 if __name__ == '__main__':
     unittest.main()
