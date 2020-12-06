@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.902
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "TDD-Sudoku", "TDD-Sudoku\TDD-Sudoku.pyproj", "{5DA0EBB2-F97A-4D05-9A80-212BBD1D01EC}"
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Solver", "Solver\Solver.pyproj", "{5DA0EBB2-F97A-4D05-9A80-212BBD1D01EC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
