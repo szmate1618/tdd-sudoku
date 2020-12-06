@@ -20,5 +20,13 @@ class TestTypes(unittest.TestCase):
             for cell in line:
                 self.assertIsInstance(cell, int)
 
+
+class TestUniqueness(unittest.TestCase):
+
+    def test_uniqueness_in_lines(self):
+        solution = solver.solve(test_data.solved)
+        for line in solution:
+            self.assertEqual(len(set(line)), len(line))
+
 if __name__ == '__main__':
     unittest.main()
