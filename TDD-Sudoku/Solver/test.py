@@ -4,7 +4,9 @@ import test_data
 
 import solver
 
-class Test_test(unittest.TestCase):
+
+class TestTypes(unittest.TestCase):
+
     def test_solve_output_type(self):
         solution = solver.solve(test_data.solved)
 
