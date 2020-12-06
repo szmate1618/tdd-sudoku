@@ -1,2 +1,2 @@
 def solve(board):
-    pass
+    return [[0 for  i in range(9)] for i in range(9)]
