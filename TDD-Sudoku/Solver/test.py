@@ -15,5 +15,8 @@ class Test_test(unittest.TestCase):
             self.assertEquals(len(line), 9)
             self.assertIsInstance(line, list)
 
+            for cell in line:
+                self.assertIsInstance(cell, int)
+
 if __name__ == '__main__':
     unittest.main()
