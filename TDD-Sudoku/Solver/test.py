@@ -42,5 +42,16 @@ class TestUniqueness(unittest.TestCase):
                     box.append(solution[bi + i][bj + j])
             self.assertEqual(len(set(box)), len(box))
 
+
+class TestNumericRange(unittest.TestCase):
+
+    def test_numeric_range(self):
+        solution = solver.solve(test_data.solved)
+        for i in range(9):
+            for j in range(9):
+                self.assertGreaterEqual(solution[i][j], 1)
+                self.assertLessEqual(solution[i][j], 9)
+
+
 if __name__ == '__main__':
     unittest.main()
